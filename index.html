@@ -21,7 +21,7 @@
     <div class="container">
       <img src="1.jpg" id="imageToClick" class="gambar">
       <div class="text-container">
-      <p id="displayText"></p>
+      <p class="text-center text-white pt-3" id="displayText"></p>
     </div>
     </div>
     
@@ -31,8 +31,18 @@
     
     <script>
       const imageToClick = document.getElementById('imageToClick');
-      imageToClick.addEventListener('click', () => {
-        const audio = new Audio('lagu.mp3'); audio.play(); });
+const displayText = document.getElementById('displayText');
+
+imageToClick.addEventListener('click', () => {
+  const audio = new Audio('lagu.mp3');
+  audio.play();
+  
+  // Set a delay of 2 seconds before showing the text
+  setTimeout(() => {
+    displayText.innerText = 'Selamat Yudisium Sayang! I Love so Much bukan so Many. Bangga sumpaah:). Dengerin lagunya sampai habis, ingat lagu ini ga? wkwkwkwk';
+  }, 2000);  // Adjust the delay (in milliseconds) as needed
+});
+
         // Wait for the page content to load
 window.addEventListener('load', () => {
   const preloader = document.querySelector('.preloader');
